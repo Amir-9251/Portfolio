@@ -5,8 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      
+    </style>
   </head>
   <body>
+    <div class="navbar-container">
+      <div class="navbar-brand" style="display: flex; align-items: center">
+        <img
+          style="width: 40px; height: 40px"
+          src="images/portfolio.svg"
+          alt=""
+        />
+        <h1 style="float: right">Portfolio</h1>
+      </div>
+      <img src="images/menue.svg" class="toggler-menu" id="toggler" alt="" />
+
+      <ul class="list list-mb">
+        <li class="list__item"><a href="#">Home</a></li>
+        <li class="list__item"><a href="#">Experience</a></li>
+        <li class="list__item"><a href="#">Education</a></li>
+        <li class="list__item"><a href="#">Skills</a></li>
+        <li class="list__item"><a href="#">Contact us</a></li>
+        <li class="list__item" id="login">SIGN IN</li>
+      </ul>
+    </div>
     <div class="Profile">
       <div class="Profile__header">
         <a class="profile__img" href="images/profile_image.jpg">
@@ -22,10 +45,86 @@
         </div>
       </div>
       <div class="profile__body">
-        <h3 class="heading">Amir Mehboob</h3>
+        <h3 class="heading" id="heading">
+          <span id="heading-first"></span>
+          <span id="heading-second"></span>
+        </h3>
         <p class="profession">Frontend engineer</p>
       </div>
     </div>
+    <form class="login-form" id="form">
+      <div class="form-container">
+        <h1 class="form__heading">Sign-Up Form</h1>
+        <div class="input-container">
+          <input
+            class="form__input"
+            id="fName"
+            type="text"
+            placeholder="First Name"
+            value=""
+            autofocus
+            maxlength="10"
+          />
+        </div>
+        <div class="input-container">
+          <input
+            class="form__input"
+            type="text"
+            id="lName"
+            placeholder="Last Name"
+          />
+        </div>
+        <div class="input-container">
+          <input
+            class="form__input"
+            type="email"
+            id="email"
+            placeholder="email"
+          />
+          <span class="input-error email-error" id="email-error"></span>
+        </div>
+        <div class="input-container">
+          <input
+            class="form__input"
+            id="contact"
+            type="tel"
+            placeholder="contact"
+            minlength="11"
+            maxlength="11"
+          />
+          <span class="input-error contact-error" id="contact-error"></span>
+        </div>
+        <div class="input-container">
+          <input
+            class="form__input"
+            id="pswd"
+            type="password"
+            placeholder="Password"
+          />
+          <span class="input-error pswd-error" id="pswd-error"></span>
+        </div>
+        <div class="input-container">
+          <input
+            class="form__input"
+            id="confirm-pswd"
+            type="password"
+            placeholder="Confirm Password"
+          />
+          <span
+            class="input-error confirmPswd-error"
+            id="cofirmPswd-error"
+          ></span>
+        </div>
+        <div class="btn-container">
+          <button class="btn btn-primary" id="btn" type="submit">
+            Register
+          </button>
+          <button class="btn btn-secondary" type="reset">Clear</button>
+        </div>
+        <span id="cross">&Cross;</span>
+      </div>
+    </form>
+
     <script src="js/index.js"></script>
   </body>
 </html>

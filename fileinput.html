@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom File Input</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <form id="myForm">
+      <input type="text" id="firstName" placeholder="First Name">
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+      <div id="errorMessage" style="color:red;"></div>
+      <button type="submit">Submit</button>
+  </form>
+  
+  <script>
+  document.getElementById('myForm').addEventListener('submit', function(e) {
+      // Prevent form submission by default
+      e.preventDefault();
+  
+      // Get the form fields
+      let firstName = document.getElementById('firstName').value;
+      let email = document.getElementById('email').value;
+      let password = document.getElementById('password').value;
+      let errorMessage = document.getElementById('errorMessage');
+  
+      // Reset the error message
+      errorMessage.textContent = '';
+  
+      // Check if any of the fields are empty
+      if (!firstName) {
+          errorMessage.textContent = 'First Name is required';
+          return; // Stop further execution
+      }
+  
+      if (!email) {
+          errorMessage.textContent = 'Email is required';
+          return; // Stop further execution
+      }
+  
+      if (!password) {
+          errorMessage.textContent = 'Password is required';
+          return; // Stop further execution
+      }
+  
+      // If all fields are valid, you can submit the form (e.g., using AJAX or manually)
+      alert('Form submitted successfully!');
+      // Uncomment the line below if you want to submit the form after validation
+      // e.target.submit();
+  });
+  </script>
+  
+
+  </body>
+</html>
