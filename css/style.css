@@ -18,7 +18,8 @@ body {
   flex-direction: column;
   align-items: center;
   background: var(--color-primarty);
-  padding: 3rem 0;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
 }
 .Profile__header {
   width: 130px;
@@ -124,13 +125,14 @@ body {
   color: var(--color-primarty);
 }
 .list-mb {
-  /* position: fixed; */
   top: 42px;
   left: 0;
-  height: 100vh;
+  height: 0;
+  opacity: 0;
   text-align: center;
   z-index: 99;
-  color: #074b47;
+  /* color: #074b47; */
+  transition: all 0.5s;
 }
 @media screen and (min-width: 768px) {
   .navbar-container {
@@ -156,15 +158,25 @@ body {
   .list__item:last-child {
     margin-left: 2rem;
   }
+  .list-mb {
+    opacity: 1;
+  }
 }
 @media screen and (max-width: 768px) {
   .activated {
-    display: none !important;
+    height: 100vh;
+    opacity: 1;
+  }
+  .list-mb {
+    background-color: #074b47;
+    position: fixed;
+    top: 62px;
+    left: 0;
   }
 }
 .login-form {
   width: 100%;
-  height: 100vh;
+  height: 110vh;
   margin: 0 auto;
   padding: 5rem 0;
   margin-top: 5rem;
@@ -182,7 +194,7 @@ body {
   position: relative;
   padding: 8rem;
   padding-top: 3rem;
-  border-radius: 25px;
+  border-radius: 15px;
   width: 35%;
   margin: 0 auto;
 }
@@ -231,6 +243,18 @@ body {
   font-size: 1.3rem;
   letter-spacing: 0.5px;
 }
+.proflie__footer{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer__item{
+font-size: 1.5rem;
+color: #fff;
+font-weight: 400;
+padding-left: 2rem;
+}
 .btn-primary {
   background-image: radial-gradient(
     circle 817.6px at 10% 20%,
@@ -253,21 +277,21 @@ body {
   right: 10px;
   cursor: pointer;
 }
-@media screen and (max-width:768px) {
-  .form__heading{
+@media screen and (max-width: 768px) {
+  .form__heading {
     font-size: 3rem;
   }
-  .form-container{
+  .form-container {
     padding: 8rem 5rem;
-    width:calc(50% - 30px);
+    width: calc(70% - 30px);
   }
 }
-@media screen and (max-width:500px) {
-  .form__heading{
+@media screen and (max-width: 500px) {
+  .form__heading {
     font-size: 2.5rem;
   }
-  .form-container{
+  .form-container {
     padding: 8rem 3rem;
-    width:calc(80% - 30px);
+    width: calc(80% - 30px);
   }
 }

@@ -1,16 +1,16 @@
-// // script.js
-// const fileInput = document.getElementById("fileInput");
-// const profileImage = document.getElementById("profileImage");
-// fileInput.addEventListener("change", function () {
-//   const file = fileInput.files[0];
-//   if (file) {
-//     const reader = new FileReader();
-//     reader.onload = (e) => {
-//       profileImage.src = e.target.result;
-//     };
-//     reader.readAsDataURL(file);
-//   }
-// });
+// script.js
+const fileInput = document.getElementById("fileInput");
+const profileImage = document.getElementById("profileImage");
+fileInput.addEventListener("change", function () {
+  const file = fileInput.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      profileImage.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+});
 document.querySelector("#toggler").addEventListener("click", function () {
   document.querySelectorAll(".list-mb").forEach((element) => {
     element.classList.toggle("activated");
@@ -43,6 +43,8 @@ form.addEventListener("submit", function (e) {
       contact: contactInput,
       password: passwordInput,
     };
+    e.target.submit()
+    console.log(allObjValue);
     heading1.textContent = allObjValue.firstName;
     heading2.textContent = allObjValue.lastName;
   }
