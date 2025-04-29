@@ -31,7 +31,7 @@ export default function ClientPage() {
             <div className="container flex flex-col-reverse md:flex-row items-center gap-10 h-full">
               <FadeIn className="md:w-1/2 space-y-6 mt-10 md:mt-0" delay={0.2}>
                 <span className="px-3 py-1 text-sm font-medium rounded-full border border-primary/20 text-primary inline-block">
-                  Frontend Developer
+                  Software Engineer
                 </span>
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
                   <AboutDialog>Hi, I'm M Amir</AboutDialog>
