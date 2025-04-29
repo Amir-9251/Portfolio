@@ -28,8 +28,8 @@ export default function ClientPage() {
           {/* Hero Section */}
           <section id="about" className="relative py-20 min-h-[calc(100vh-4rem)]">
             <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,var(--hero-gradient-from),transparent_40%),radial-gradient(circle_at_bottom_left,var(--hero-gradient-to),transparent_40%)]"></div>
-            <div className="container flex flex-col md:flex-row items-center gap-10 h-full">
-              <FadeIn className="md:w-1/2 space-y-6" delay={0.2}>
+            <div className="container flex flex-col-reverse md:flex-row items-center gap-10 h-full">
+              <FadeIn className="md:w-1/2 space-y-6 mt-10 md:mt-0" delay={0.2}>
                 <span className="px-3 py-1 text-sm font-medium rounded-full border border-primary/20 text-primary inline-block">
                   Frontend Developer
                 </span>
