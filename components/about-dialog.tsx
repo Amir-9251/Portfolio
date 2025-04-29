@@ -23,7 +23,7 @@ export function AboutDialog({ children }: AboutDialogProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <span className="cursor-pointer hover:opacity-80 transition-opacity">{children}</span>
+        <span className="cursor-pointer hover:text-primary/60 transition-all duration-200">{children}</span>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[600px] bg-card/80 backdrop-blur-md border-primary/20">
         <DialogHeader>
