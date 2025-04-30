@@ -6,13 +6,15 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ThemeSwitcher } from "@/components/theme-switcher"
+import { SettingsDialog } from "@/components/settings-dialog"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("about")
+  const [settingsOpen, setSettingsOpen] = useState(false)
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -63,7 +65,7 @@ export default function Header() {
     >
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="font-bold text-xl gradient-text">
-          M Amir
+          John Doe
         </Link>
 
         <nav className="hidden md:flex gap-6">
@@ -82,7 +84,8 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <div className="hidden sm:block">
+          <div className="hidden sm:flex items-center gap-2">
+            <SettingsDialog open={settingsOpen} onOpenChange={setSettingsOpen} />
             <ThemeSwitcher />
           </div>
 
@@ -94,10 +97,6 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px]">
-              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <SheetDescription className="sr-only">
-                Main navigation menu for the website
-              </SheetDescription>
               <nav className="flex flex-col gap-4 mt-8">
                 <MobileNavLink
                   href="#about"
@@ -139,7 +138,8 @@ export default function Header() {
                 >
                   Contact
                 </MobileNavLink>
-                <div className="mt-4">
+                <div className="mt-4 flex items-center gap-2">
+                  <SettingsDialog open={settingsOpen} onOpenChange={setSettingsOpen} />
                   <ThemeSwitcher />
                 </div>
               </nav>
