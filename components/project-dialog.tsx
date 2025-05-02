@@ -59,10 +59,10 @@ export function ProjectDialog({ children, project }: ProjectDialogProps) {
             <DialogContent className="sm:max-w-[700px] max-h-[90vh] p-0 overflow-hidden bg-card/80 backdrop-blur-md border-primary/20">
                 <DialogTitle className="sr-only">{title}</DialogTitle>
                 <DialogDescription className="sr-only">{description}</DialogDescription>
-                <ScrollArea className="h-full">
-                    <div className="space-y-6">
+                <ScrollArea className="h-[90vh]">
+                    <div className="space-y-4 sm:space-y-6">
                         <Tabs defaultValue="overview" className="w-full">
-                            <div className="px-6 pt-2">
+                            <div className="px-4 sm:px-6 pt-2">
                                 <TabsList className="w-full grid grid-cols-3">
                                     <TabsTrigger value="overview">Overview</TabsTrigger>
                                     <TabsTrigger value="details">Details</TabsTrigger>
@@ -70,29 +70,29 @@ export function ProjectDialog({ children, project }: ProjectDialogProps) {
                                 </TabsList>
                             </div>
 
-                            <div className="p-6">
+                            <div className="p-4 sm:p-6">
                                 <TabsContent value="overview" className="space-y-4 mt-0">
                                     <div className="flex flex-wrap gap-2 mb-4">
                                         {tags.map((tag, index) => (
-                                            <Badge key={index} variant="secondary" className="bg-primary/10 hover:bg-primary/20">
+                                            <Badge key={index} variant="secondary" className="bg-primary/10 hover:bg-primary/20 text-xs sm:text-sm">
                                                 {tag}
                                             </Badge>
                                         ))}
                                     </div>
 
                                     <div className="space-y-4">
-                                        <p className="text-muted-foreground">
+                                        <p className="text-muted-foreground text-sm sm:text-base">
                                             {longDescription ||
                                                 "This project was built with a focus on user experience and performance. The goal was to create a solution that is both functional and visually appealing."}
                                         </p>
 
                                         {features && features.length > 0 && (
                                             <div className="space-y-2">
-                                                <h3 className="text-lg font-medium">Key Features</h3>
+                                                <h3 className="text-base sm:text-lg font-medium">Key Features</h3>
                                                 <ul className="space-y-1">
                                                     {features.map((feature, index) => (
-                                                        <li key={index} className="flex items-start gap-2">
-                                                            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                                                        <li key={index} className="flex items-start gap-2 text-sm sm:text-base">
+                                                            <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-primary shrink-0 mt-0.5" />
                                                             <span>{feature}</span>
                                                         </li>
                                                     ))}
@@ -102,11 +102,11 @@ export function ProjectDialog({ children, project }: ProjectDialogProps) {
 
                                         {challenges && challenges.length > 0 && (
                                             <div className="space-y-2">
-                                                <h3 className="text-lg font-medium">Challenges & Solutions</h3>
+                                                <h3 className="text-base sm:text-lg font-medium">Challenges & Solutions</h3>
                                                 <ul className="space-y-1">
                                                     {challenges.map((challenge, index) => (
-                                                        <li key={index} className="flex items-start gap-2">
-                                                            <XCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                                                        <li key={index} className="flex items-start gap-2 text-sm sm:text-base">
+                                                            <XCircle className="h-4 w-4 sm:h-5 sm:w-5 text-primary shrink-0 mt-0.5" />
                                                             <span>{challenge}</span>
                                                         </li>
                                                     ))}
@@ -115,9 +115,9 @@ export function ProjectDialog({ children, project }: ProjectDialogProps) {
                                         )}
 
                                         {testimonial && (
-                                            <div className="bg-muted p-4 rounded-md italic border-l-4 border-primary">
-                                                <p className="text-muted-foreground">"{testimonial.quote}"</p>
-                                                <p className="text-sm font-medium mt-2">
+                                            <div className="bg-muted p-3 sm:p-4 rounded-md italic border-l-4 border-primary">
+                                                <p className="text-muted-foreground text-sm sm:text-base">"{testimonial.quote}"</p>
+                                                <p className="text-xs sm:text-sm font-medium mt-2">
                                                     — {testimonial.author}, {testimonial.role}
                                                 </p>
                                             </div>
@@ -126,52 +126,52 @@ export function ProjectDialog({ children, project }: ProjectDialogProps) {
                                 </TabsContent>
 
                                 <TabsContent value="details" className="space-y-4 mt-0">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div className="grid grid-cols-1 gap-4">
                                         {date && (
                                             <div className="flex items-center gap-2">
-                                                <Calendar className="h-5 w-5 text-primary" />
+                                                <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                                                 <div>
-                                                    <p className="text-sm font-medium">Date</p>
-                                                    <p className="text-sm text-muted-foreground">{date}</p>
+                                                    <p className="text-xs sm:text-sm font-medium">Date</p>
+                                                    <p className="text-xs sm:text-sm text-muted-foreground">{date}</p>
                                                 </div>
                                             </div>
                                         )}
 
                                         {role && (
                                             <div className="flex items-center gap-2">
-                                                <Code className="h-5 w-5 text-primary" />
+                                                <Code className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                                                 <div>
-                                                    <p className="text-sm font-medium">Role</p>
-                                                    <p className="text-sm text-muted-foreground">{role}</p>
+                                                    <p className="text-xs sm:text-sm font-medium">Role</p>
+                                                    <p className="text-xs sm:text-sm text-muted-foreground">{role}</p>
                                                 </div>
                                             </div>
                                         )}
 
                                         {team && (
                                             <div className="flex items-center gap-2">
-                                                <Code className="h-5 w-5 text-primary" />
+                                                <Code className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                                                 <div>
-                                                    <p className="text-sm font-medium">Team</p>
-                                                    <p className="text-sm text-muted-foreground">{team}</p>
+                                                    <p className="text-xs sm:text-sm font-medium">Team</p>
+                                                    <p className="text-xs sm:text-sm text-muted-foreground">{team}</p>
                                                 </div>
                                             </div>
                                         )}
                                     </div>
 
                                     <div className="space-y-2">
-                                        <h3 className="text-lg font-medium">Technologies Used</h3>
+                                        <h3 className="text-base sm:text-lg font-medium">Technologies Used</h3>
                                         <div className="flex flex-wrap gap-2">
                                             {tags.map((tag, index) => (
-                                                <Badge key={index} variant="outline" className="border-primary/20">
+                                                <Badge key={index} variant="outline" className="border-primary/20 text-xs sm:text-sm">
                                                     {tag}
                                                 </Badge>
                                             ))}
                                         </div>
                                     </div>
 
-                                    <div className="pt-4 flex flex-wrap gap-3">
+                                    <div className="pt-4 flex flex-col sm:flex-row gap-3">
                                         {link && (
-                                            <Button asChild className="rounded-full">
+                                            <Button asChild className="rounded-full w-full sm:w-auto">
                                                 <Link href={link} target="_blank" rel="noopener noreferrer">
                                                     <ExternalLink className="mr-2 h-4 w-4" />
                                                     View Live Demo
@@ -179,7 +179,7 @@ export function ProjectDialog({ children, project }: ProjectDialogProps) {
                                             </Button>
                                         )}
                                         {github && (
-                                            <Button variant="outline" asChild className="rounded-full">
+                                            <Button variant="outline" asChild className="rounded-full w-full sm:w-auto">
                                                 <Link href={github} target="_blank" rel="noopener noreferrer">
                                                     <Github className="mr-2 h-4 w-4" />
                                                     View Source Code
@@ -191,7 +191,7 @@ export function ProjectDialog({ children, project }: ProjectDialogProps) {
 
                                 <TabsContent value="gallery" className="mt-0">
                                     {gallery && gallery.length > 0 ? (
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div className="grid grid-cols-1 gap-4">
                                             {gallery.map((img, index) => (
                                                 <div key={index} className="relative aspect-video rounded-md overflow-hidden">
                                                     <Image
