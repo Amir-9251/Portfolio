@@ -7,6 +7,35 @@ export const projects = [
     tags: ["HTML", "CSS", "JavaScript"],
     link: "https://allahisgreat.netlify.app/",
     github: "https://github.com/Amir-9251/Airbnb",
+    longDescription:
+      "This e-commerce platform provides a seamless shopping experience with features like product filtering, search, user accounts, wishlists, and secure checkout. The admin dashboard allows for easy product and order management.",
+    features: [
+      "Responsive design for all devices",
+      "Advanced filtering and search functionality",
+      "Secure payment processing with Stripe",
+      "User accounts and order history",
+      "Admin dashboard for inventory management",
+    ],
+    challenges: [
+      "Optimizing image loading for better performance",
+      "Implementing a secure and seamless checkout process",
+      "Building a scalable database structure with Supabase",
+    ],
+    date: "January 2023",
+    role: "Lead Frontend Developer",
+    team: "3-person team",
+    testimonial: {
+      quote:
+        "The e-commerce platform exceeded our expectations. Sales increased by 40% in the first month after launch.",
+      author: "Jane Smith",
+      role: "CEO, Fashion Boutique",
+    },
+    gallery: [
+      "/placeholder.svg?height=200&width=400&text=Homepage",
+      "/placeholder.svg?height=200&width=400&text=Product+Page",
+      "/placeholder.svg?height=200&width=400&text=Checkout",
+      "/placeholder.svg?height=200&width=400&text=Admin+Dashboard",
+    ],
   },
   {
     title: "Kodex Tech clone Page",
@@ -16,6 +45,28 @@ export const projects = [
     tags: ["HTML", "CSS", "JavaScript", "ApexCharts"],
     link: "https://kodextech.netlify.app/",
     github: "https://github.com/Amir-9251/kodextechProject",
+    longDescription:
+      "This task management application helps teams stay organized with features like task assignment, due dates, priority levels, and real-time collaboration. The app includes project management tools, time tracking, and detailed reporting.",
+    features: [
+      "Drag-and-drop task organization",
+      "Real-time updates and notifications",
+      "Team collaboration tools",
+      "Time tracking and reporting",
+      "Mobile app for on-the-go productivity",
+    ],
+    challenges: [
+      "Implementing real-time synchronization across devices",
+      "Designing an intuitive user interface for complex task relationships",
+      "Optimizing performance for large project databases",
+    ],
+    date: "March 2023",
+    role: "Full Stack Developer",
+    team: "Solo project",
+    gallery: [
+      "/placeholder.svg?height=200&width=400&text=Dashboard",
+      "/placeholder.svg?height=200&width=400&text=Task+View",
+      "/placeholder.svg?height=200&width=400&text=Calendar",
+    ],
   },
   {
     title: "Game Hub",
@@ -24,18 +75,43 @@ export const projects = [
     tags: ["React js", "React Router", "React Query", "framer motion", "React-infinite-scroll-component", "Chakra UI"],
     link: "https://game-hub-xi-sage.vercel.app/",
     github: "https://github.com/Amir-9251/Game-Hub",
+
+    longDescription:
+      "This portfolio website showcases my work and skills with a modern, responsive design. It features smooth animations, dark mode support, and a contact form for potential clients or employers to reach out.",
+    features: [
+      "Responsive design for all screen sizes",
+      "Dark mode and theme customization",
+      "Animated page transitions and UI elements",
+      "Project showcase with detailed case studies",
+      "Integrated contact form",
+    ],
+    challenges: [
+      "Creating smooth animations without affecting performance",
+      "Implementing a theme system with multiple color schemes",
+      "Optimizing images and assets for fast loading",
+    ],
+    date: "April 2023",
+    role: "Designer & Developer",
+    team: "Solo project",
+    gallery: [
+      "/placeholder.svg?height=200&width=400&text=Home",
+      "/placeholder.svg?height=200&width=400&text=Projects",
+      "/placeholder.svg?height=200&width=400&text=Contact",
+    ],
   },
+
 ]
 
 export const skills = [
   "React JS",
-  "Next JS",
   "Vue JS",
+  "Next JS",
   "Node JS",
   "JavaScript",
   "TypeScript",
-  "HTML",
-  "CSS",
   "Tailwind CSS",
   "BootStrap",
+  "HTML",
+  "CSS",
+
 ]

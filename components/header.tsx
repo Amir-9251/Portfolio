@@ -65,7 +65,7 @@ export default function Header() {
     >
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="font-bold text-xl gradient-text">
-          John Doe
+          M Amir
         </Link>
 
         <nav className="hidden md:flex gap-6">
