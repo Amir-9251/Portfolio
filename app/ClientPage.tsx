@@ -28,14 +28,22 @@ export default function ClientPage() {
           {/* Hero Section */}
           <section id="about" className="relative py-20 min-h-[calc(100vh-4rem)]">
             <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,var(--hero-gradient-from),transparent_40%),radial-gradient(circle_at_bottom_left,var(--hero-gradient-to),transparent_40%)]"></div>
-            <div className="container flex flex-col-reverse md:flex-row items-center gap-10 h-full">
-              <FadeIn className="md:w-1/2 space-y-6 mt-10 md:mt-0" delay={0.2}>
+            <div className="container flex flex-col md:flex-row items-center gap-10 h-full">
+              <FadeIn className="md:w-1/2 space-y-6" delay={0.2}>
                 <span className="px-3 py-1 text-sm font-medium rounded-full border border-primary/20 text-primary inline-block">
-                  Software Engineer
+                  Frontend Developer
                 </span>
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-                  <AboutDialog>Hi, I'm M Amir</AboutDialog>
-                  <span className="block gradient-text mt-2">Creating digital experiences</span>
+                  <AboutDialog>
+                    <span className="cursor-pointer hover:opacity-80 transition-opacity">Hi, I'm M Amir</span>
+                  </AboutDialog>
+                  <span className="block mt-2">
+                    <AboutDialog>
+                      <span className="gradient-text cursor-pointer hover:opacity-80 transition-opacity">
+                        Creating digital experiences
+                      </span>
+                    </AboutDialog>
+                  </span>
                 </h1>
                 <p className="text-xl text-muted-foreground">
                   I build exceptional and accessible digital experiences for the web.
@@ -51,7 +59,7 @@ export default function ClientPage() {
                     <Link href="#projects">View my work</Link>
                   </Button>
                   <Button variant="secondary" asChild className="rounded-full">
-                    <a href="/resume.pdf" download="resume.pdf">
+                    <a href="/resume.pdf" download="John_Doe_Resume.pdf">
                       <FileDown className="mr-2 h-4 w-4" />
                       Download CV
                     </a>
@@ -59,16 +67,18 @@ export default function ClientPage() {
                 </div>
               </FadeIn>
               <FadeIn className="md:w-1/2 flex justify-center" delay={0.4} direction="left">
-                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 gradient-border">
-                  <Image
-                    src="/amir1.jpg"
-                    alt="M Amir"
-                    fill
-                    className="object-cover object-top transition-transform duration-700 hover:scale-110"
-                    priority
-                    sizes="(max-width: 768px) 256px, 320px"
-                  />
-                </div>
+                <AboutDialog>
+                  <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 gradient-border cursor-pointer hover:opacity-90 transition-opacity">
+                    <Image
+                      src="/amir1.jpg"
+                      alt="John Doe"
+                      fill
+                      className="object-cover object-top transition-transform duration-700 hover:scale-110"
+                      priority
+                      sizes="(max-width: 768px) 256px, 320px"
+                    />
+                  </div>
+                </AboutDialog>
               </FadeIn>
 
               <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:block">
