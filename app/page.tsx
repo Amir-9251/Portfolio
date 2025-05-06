@@ -4,6 +4,11 @@ import ClientPage from "./ClientPage"
 export const metadata: Metadata = {
   title: "M Amir | Frontend Developer",
   description: "Professional portfolio of M Amir, Frontend Developer specializing in React and Next.js",
+  icons: {
+    icon: '/code-solid.svg',
+    shortcut: '/code-solid.svg',
+    apple: '/code-solid.svg',
+  },
   openGraph: {
     title: "M Amir | Frontend Developer",
     description: "Professional portfolio of M Amir, Frontend Developer specializing in React and Next.js",
