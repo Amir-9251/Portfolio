@@ -11,19 +11,19 @@ export default function Footer() {
           <p className="text-sm text-muted-foreground mt-1">Built with Next.js and Tailwind CSS</p>
         </div>
         <div className="flex gap-4 mt-4 md:mt-0">
-          <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <Link href="https://github.com/Amir-9251" target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" size="icon" className="rounded-full">
               <Github className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
             </Button>
           </Link>
-          <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <Link href="https://linkedin.com/in/amir-ch-07050617b/" target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" size="icon" className="rounded-full">
               <Linkedin className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
             </Button>
           </Link>
-          <Link href="mailto:john.doe@example.com">
+          <Link href="mailto:amirmehboob921@gmail.com">
             <Button variant="ghost" size="icon" className="rounded-full">
               <Mail className="h-5 w-5" />
               <span className="sr-only">Email</span>

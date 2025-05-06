@@ -34,8 +34,8 @@ export function ContactInfo() {
             <motion.div
               key={index}
               className="flex items-center gap-3 group"
-              whileHover={{ x: 5 }}
-              transition={{ duration: 0.2 }}
+            // whileHover={{ x: 5 }}
+            // transition={{ duration: 0.2 }}
             >
               <div className="bg-primary/10 p-2 rounded-full transition-colors duration-300 group-hover:bg-primary/20">
                 {item.icon}
@@ -44,7 +44,7 @@ export function ContactInfo() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors duration-300 group-hover:text-primary hover-underline"
+                className="transition-colors duration-300 inline-block group-hover:text-primary hover-underline"
               >
                 {item.text}
               </Link>
@@ -55,19 +55,19 @@ export function ContactInfo() {
         <div className="pt-8">
           <h4 className="text-lg font-medium mb-4">Follow me</h4>
           <div className="flex gap-3">
-            <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/Amir-9251" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="icon" className="rounded-full gradient-border">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </Button>
             </Link>
-            <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://linkedin.com/in/amir-ch-07050617b/" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="icon" className="rounded-full gradient-border">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Button>
             </Link>
-            <Link href="mailto:john.doe@example.com">
+            <Link href="mailto:amirmehboob921@gmail.com">
               <Button variant="outline" size="icon" className="rounded-full gradient-border">
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
