@@ -18,6 +18,27 @@ import { AboutDialog } from "@/components/about-dialog"
 import { projects, skills } from "@/lib/data"
 
 export default function ClientPage() {
+  // Add this function at the top of your component
+  function handleDownloadNotification() {
+    if ("Notification" in window) {
+      if (Notification.permission === "granted") {
+        new Notification("CV Download", {
+          body: "Your resume is downloading...",
+          icon: "/download.png", // Optional icon
+        });
+      } else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then((permission) => {
+          if (permission === "granted") {
+            new Notification("CV Download", {
+              body: "Your resume is downloading...",
+              icon: "/download.png",
+            });
+          }
+        });
+      }
+    }
+  }
+
   return (
     <>
       <ScrollProgress />
@@ -59,7 +80,11 @@ export default function ClientPage() {
                     <Link href="#projects">View my work</Link>
                   </Button>
                   <Button variant="secondary" asChild className="rounded-full">
-                    <a href="/resume.pdf" download="John_Doe_Resume.pdf">
+                    <a
+                      href="/resume.pdf"
+                      download="John_Doe_Resume.pdf"
+                      onClick={handleDownloadNotification}
+                    >
                       <FileDown className="mr-2 h-4 w-4" />
                       Download CV
                     </a>
