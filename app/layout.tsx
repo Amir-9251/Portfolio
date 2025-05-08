@@ -2,7 +2,6 @@ import type React from "react"
 import "./globals.css"
 import { Inter, Montserrat } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Toaster } from "@/components/ui/toaster"
 
 // Primary font for headings
 const montserrat = Montserrat({
@@ -35,7 +34,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider>
           {children}
-          <Toaster />
         </ThemeProvider>
       </body>
     </html>

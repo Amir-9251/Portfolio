@@ -18,7 +18,7 @@ import { Slider } from "@/components/ui/slider"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Settings, Palette, Eye, Layout, Star } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
-import { toast } from "@/components/ui/use-toast"
+
 
 interface SettingsProps {
     className?: string
@@ -29,7 +29,7 @@ interface SettingsProps {
 // Define the settings interface
 interface PortfolioSettings {
     // Appearance
-    theme: string
+    theme: "light" | "dark" | "system"
     fontScale: number
 
     // Accessibility
@@ -89,7 +89,10 @@ export function SettingsDialog({ className, open, onOpenChange }: SettingsProps)
                 setTheme(parsedSettings.theme || "system")
             } catch (e) {
                 console.error("Error parsing saved settings:", e)
+                setTheme("system")
             }
+        } else {
+            setTheme("system")
         }
 
         // Apply settings
@@ -143,7 +146,7 @@ export function SettingsDialog({ className, open, onOpenChange }: SettingsProps)
 
         // Special case for theme
         if (key === "theme") {
-            setTheme(value as string)
+            setTheme(value as "light" | "dark" | "system")
         }
 
         // Apply the updated settings
@@ -165,13 +168,8 @@ export function SettingsDialog({ className, open, onOpenChange }: SettingsProps)
     // Reset all settings to default
     const handleResetSettings = () => {
         setSettings({ ...defaultSettings })
-        setTheme(defaultSettings.theme)
+        setTheme("system")
         applySettings(defaultSettings)
-
-        toast({
-            title: "Settings reset",
-            description: "All settings have been reset to their default values.",
-        })
     }
 
     return (
@@ -216,7 +214,7 @@ export function SettingsDialog({ className, open, onOpenChange }: SettingsProps)
                                 <RadioGroup
                                     id="theme"
                                     value={settings.theme}
-                                    onValueChange={(value) => updateSetting("theme", value)}
+                                    onValueChange={(value) => updateSetting("theme", value as "light" | "dark" | "system")}
                                     className="flex flex-wrap gap-3"
                                 >
                                     <div className="flex items-center space-x-2">
