@@ -42,25 +42,41 @@ export default function ContactForm() {
     }
 
     try {
-      // Simulate form submission with a delay
-      await new Promise((resolve) => setTimeout(resolve, 800))
-
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
+      // Send form data to backend API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
       })
-
-      setFormState({
-        name: "",
-        email: "",
-        message: "",
-      })
+      const data = await response.json()
+      if (response.ok && data.success) {
+        toast({
+          title: "Message sent!",
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        })
+        setFormState({
+          name: "",
+          email: "",
+          message: "",
+        })
+        setStatus('success')
+      } else {
+        toast({
+          title: "Something went wrong",
+          description: data.error || "Your message couldn't be sent. Please try again.",
+          variant: "destructive",
+        })
+        setStatus('error')
+      }
     } catch (error) {
       toast({
         title: "Something went wrong",
         description: "Your message couldn't be sent. Please try again.",
         variant: "destructive",
       })
+      setStatus('error')
     } finally {
       setIsSubmitting(false)
     }
@@ -165,6 +181,21 @@ export default function ContactForm() {
             <span className="absolute inset-0 bg-primary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
           </Button>
         </form>
+        {validationError && (
+          <div className="mt-4 text-sm text-red-600 dark:text-red-400">
+            {validationError}
+          </div>
+        )}
+        {status === 'success' && (
+          <div className="mt-4 text-sm text-green-600 dark:text-green-400">
+            Your message has been sent successfully!
+          </div>
+        )}
+        {status === 'error' && (
+          <div className="mt-4 text-sm text-red-600 dark:text-red-400">
+            There was an error sending your message. Please try again.
+          </div>
+        )}
       </CardContent>
     </Card>
   )
