@@ -58,24 +58,19 @@ export function AboutDialog({ children }: AboutDialogProps) {
           <div className="space-y-4">
             <h4 className="text-lg font-medium">Professional Summary</h4>
             <p className="text-muted-foreground">
-              I'm a passionate Frontend Developer with 5+ years of experience creating responsive, user-friendly web
-              applications. Specializing in React, Next.js, and modern JavaScript, I focus on building performant and
-              accessible digital experiences.
+              Proficient Frontend Developer with expertise in building responsive, user-friendly web applications using HTML, CSS, JavaScript, TypeScript, and React.js. Strong foundation in Object-Oriented Programming (OOP) principles, enabling the creation of modular and maintainable code. Skilled in performance optimization, cross-browser compatibility, and integrating APIs. Adept at collaborating in Agile teams to deliver high-quality, scalable solutions. Passionate about creating seamless user experiences while staying current with emerging web technologies.
             </p>
 
-            <h4 className="text-lg font-medium">Background</h4>
-            <p className="text-muted-foreground">
-              With a background in Computer Science and a keen eye for design, I bridge the gap between technical
-              functionality and aesthetic appeal. I've worked with startups and established companies across e-commerce,
-              fintech, and SaaS industries.
-            </p>
+            <h4 className="text-lg font-medium">Strengths</h4>
+            <ul className="text-muted-foreground list-disc list-inside">
+              <li>Problem-Solving: Resolved complex software issues in previous role delivering a 40% reduction in long-standing unresolved problems.</li>
+            </ul>
 
-            <h4 className="text-lg font-medium">My Approach</h4>
-            <p className="text-muted-foreground">
-              I believe in clean, maintainable code and component-driven development. User experience is at the heart of
-              everything I build, ensuring that applications are not only visually appealing but also intuitive and
-              accessible to all users.
-            </p>
+            <h4 className="text-lg font-medium">Languages</h4>
+            <ul className="text-muted-foreground list-disc list-inside">
+              <li>English (Intermediate)</li>
+              <li>Urdu (Advanced)</li>
+            </ul>
           </div>
         </div>
       </DialogContent>
