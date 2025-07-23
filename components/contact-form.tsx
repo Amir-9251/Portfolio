@@ -35,28 +35,13 @@ export default function ContactForm() {
     setValidationError(null)
 
     // Frontend validation
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+    if (!formState.name.trim() || !formState.email.trim() || !formState.message.trim()) {
       setValidationError('All fields are required.')
       setIsSubmitting(false)
       return
     }
 
     try {
-<<<<<<< HEAD
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      })
-      if (res.ok) {
-        setFormData({ name: "", email: "", message: "" })
-        setStatus("success")
-      } else {
-        setStatus("error")
-      }
-    } catch (error) {
-      setStatus("error")
-=======
       // Simulate form submission with a delay
       await new Promise((resolve) => setTimeout(resolve, 800))
 
@@ -76,78 +61,11 @@ export default function ContactForm() {
         description: "Your message couldn't be sent. Please try again.",
         variant: "destructive",
       })
->>>>>>> parent of 261892c (fix bug and clean code)
     } finally {
       setIsSubmitting(false)
     }
   }
 
-<<<<<<< HEAD
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const isFormValid = formData.name.trim() && formData.email.trim() && formData.message.trim()
-
-  return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-6">
-      <div className="space-y-2">
-        <Label htmlFor="name">Name</Label>
-        <Input
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          placeholder="Your name"
-        />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          placeholder="your.email@example.com"
-        />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="message">Message</Label>
-        <Textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          placeholder="Your message"
-          className="min-h-[150px]"
-        />
-      </div>
-      <Button
-        type="submit"
-        disabled={isSubmitting || !isFormValid}
-        className={(!isFormValid || isSubmitting) ? "cursor-not-allowed" : ""}
-      >
-        {isSubmitting ? "Sending..." : "Send Message"}
-      </Button>
-      {validationError && (
-        <div className="text-red-600 font-medium pt-2">{validationError}</div>
-      )}
-      {status === "success" && (
-        <div className="text-green-600 font-medium pt-2">Your message has been sent!</div>
-      )}
-      {status === "error" && (
-        <div className="text-red-600 font-medium pt-2">There was an error sending your message. Please try again later.</div>
-      )}
-    </form>
-=======
   return (
     <Card className="border-0 bg-card/30 backdrop-blur-sm h-full">
       <CardContent className="p-6">
@@ -249,6 +167,5 @@ export default function ContactForm() {
         </form>
       </CardContent>
     </Card>
->>>>>>> parent of 261892c (fix bug and clean code)
   )
 }
