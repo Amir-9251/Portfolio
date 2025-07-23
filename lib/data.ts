@@ -104,14 +104,51 @@ export const projects = [
 
 export const skills = [
   "React JS",
-  "Vue JS",
-  "Next JS",
-  "Node JS",
-  "JavaScript",
-  "TypeScript",
-  "Tailwind CSS",
-  "BootStrap",
   "HTML",
   "CSS",
+  "JavaScript",
+  "TypeScript",
+  "BootStrap",
+  "Hook Form",
+  "Tailwind CSS",
+  "Redux",
+  "Chakra ui",
+]
 
+export const experience = [
+  {
+    title: "Software Engineer",
+    company: "Orbiqon (Software House)",
+    location: "Johar Town, Lahore",
+    date: "12/2024 - Present",
+    description: [
+      "Spearheaded frontend development for Teejara AI, an AI-powered SaaS platform built with Next.js and React.js.",
+      "Engineered responsive and SEO-optimized UIs using Next.js 13+ (App Router) and React.js 18+.",
+      "Integrated OpenAI API and third-party AI services into the frontend for real-time data visualization and interactive dashboards.",
+      "Collaborated with backend teams to integrate RESTful APIs, optimizing data fetching with React Query for seamless state synchronization.",
+      "Boosted frontend performance by 30% using code-splitting, lazy loading, and optimized asset delivery.",
+      "Implemented complex state management for AI workflows using Redux Toolkit, reducing prop drilling by 40%.",
+      "Developed error-handling mechanisms and loading states to enhance user experience during AI model processing.",
+      "Conducted cross-browser testing and resolved responsiveness issues for 98% mobile/desktop compatibility."
+    ]
+  }
+]
+
+export const education = [
+  {
+    degree: "Bachelor of Science and Information Technology",
+    school: "University of Education",
+    date: "2021 - Present"
+  }
+]
+
+export const certifications = [
+  {
+    name: "Advanced JavaScript Programming",
+    issuer: "Mosh Hamdani Online Instructor"
+  },
+  {
+    name: "React JS",
+    issuer: "Mosh Hamdani Online Instructor"
+  }
 ]

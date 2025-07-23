@@ -4,38 +4,35 @@ import type React from "react"
 
 import { createContext, useContext, useState, useEffect } from "react"
 
-type Theme = "light" | "dark" | "system"
-
 interface ThemeContextProps {
-  theme: Theme
-  setTheme: (theme: Theme) => void
+  theme: "light" | "dark"
+  setTheme: (theme: "light" | "dark") => void
 }
 
 const ThemeContext = createContext<ThemeContextProps>({
-  theme: "system",
-  setTheme: () => { },
+  theme: "light",
+  setTheme: () => {},
 })
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>("system")
+  const [theme, setTheme] = useState<"light" | "dark">("light")
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme") as Theme
+    const storedTheme = localStorage.getItem("theme")
     if (storedTheme) {
-      setTheme(storedTheme)
-    } else {
-      setTheme("system")
+      setTheme(storedTheme === "dark" ? "dark" : "light")
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark")
     }
   }, [])
 
   useEffect(() => {
-    const root = document.documentElement
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-    const activeTheme = theme === "system" ? systemTheme : theme
-
-    root.classList.remove("light", "dark")
-    root.classList.add(activeTheme)
     localStorage.setItem("theme", theme)
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark")
+    } else {
+      document.documentElement.classList.remove("dark")
+    }
   }, [theme])
 
   return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>
